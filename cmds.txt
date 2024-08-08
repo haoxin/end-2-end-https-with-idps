@@ -1,0 +1,8 @@
+curl -A "HaxerMen"  https://azfwtest.chenghx.biz -k
+
+openssl s_client  -showcerts -connect azfwtest.chenghx.biz:443
+
+curl  -A "HaxerMen" --resolve  azfwtest.chenghx.biz:443:10.0.0.4 https://azfwtest.chenghx.biz
+
+
+

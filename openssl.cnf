@@ -1,0 +1,45 @@
+[ req ]
+default_bits        = 4096
+distinguished_name  = req_distinguished_name
+string_mask         = utf8only
+default_md          = sha512
+req_extensions      = req_ext
+prompt              = no
+
+[ req_distinguished_name ]
+countryName                     = CN
+stateOrProvinceName             = Beijing
+localityName                    = BJ
+0.organizationName              = Chenghx
+organizationalUnitName          = per
+commonName                      = chenghx.biz
+emailAddress                    = chx@chenghx.biz
+
+[ rootCA_ext ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true, pathlen:1
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+subjectAltName = @alt_names
+
+[ interCA_ext ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true, pathlen:1
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+subjectAltName = @alt_names
+
+[ server_ext ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:false
+keyUsage = critical, digitalSignature
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = chenghx.biz
+DNS.2 = *.chenghx.biz
