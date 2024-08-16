@@ -1,3 +1,11 @@
+证书的使用: 
+
+1. 创建rootCA(去掉begin和end, 上传到appgw backends)和interCA(转换成pfx, 上传到keyvault, 给firewall用)
+
+
+
+https://learn.microsoft.com/en-us/azure/firewall/premium-certificates
+
 curl -A "HaxerMen"  https://azfwtest.chenghx.biz -k
 
 openssl s_client  -showcerts -connect azfwtest.chenghx.biz:443
