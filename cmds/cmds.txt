@@ -1,8 +1,8 @@
 证书的使用: 
 
 1. 创建rootCA(去掉begin和end, 上传到appgw backends)和interCA(转换成pfx, 上传到keyvault, 给firewall用)
-
-
+2. Application gateway 访问后端HTTPS 服务器, 最高支持TLSv1.2, TLSv1.3不工作,但是Health prob 通过, 很奇怪. 
+3. application gateway 后端池的证书更新需要5分中以上才生效??!!,健康检查期间报错,  需要耐心等待!!!
 
 https://learn.microsoft.com/en-us/azure/firewall/premium-certificates
 
